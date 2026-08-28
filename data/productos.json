@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nombre": "Totebag Taraca",
+    "descripcion": "Bolsa de tela estilizada",
+    "precio": 1200,
+    "imagen": "/img/totebag_taraca_drexler.png"
+  },
+  {
+    "id": 2,
+    "nombre": "T-shirt Me Haces Bien",
+    "descripcion": "Camiseta de algodón",
+    "precio": 800,
+    "imagen": "/img/tshirt_mehacesbien_drexler.png"
+  },
+  {
+    "id": 3,
+    "nombre": "T-shirt Taraca v1",
+    "descripcion": "Camiseta estampada",
+    "precio": 800,
+    "imagen": "/img/tshirt2_taraca_drexler.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+ },
+  {
+    "id": 6,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+},
+  {
+    "id": 7,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+ },
+  {
+    "id": 9,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+ },
+  {
+    "id": 10,
+    "nombre": "Vinilo Bailar",
+    "descripcion": "Disco de vinilo",
+    "precio": 1500,
+    "imagen": "/img/vinilo_bailar_drexler.png"
+  }
+
+]
+

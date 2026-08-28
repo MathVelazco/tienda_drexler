@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM y Eventos</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/carrito.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </head>
+
+  <body>
+   <header>
+  <!-- Contenedor del banner/portada -->
+   
+  <div class="banner-portada">
+    <img src="../img/encabezado.png" alt="Jorge Drexler" />
+  </div>
+
+  <h1>JORGE DREXLER TOUR MERCH</h1>
+  
+  <nav>
+    <ul>
+      <li><a href="../index.html" class="link">INICIO</a></li>
+      <li><a href="#" class="link">NOVEDADES</a></li>
+       <li><a href="#" class="link">ON SALE</a></li>
+      <li><a href="./pages/carrito.html" class="link">MI CARRITO</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h2>Mi carrito</h2>
+  
+  <div class="resumen-carrito">
+    <h3>Total en carrito: $<span id="total-carrito">0</span></h3>
+    <div class="acciones-carrito">
+      <button id="btn-vaciar" class="btn-vaciar">Vaciar Carrito</button>
+      <button id="btn-comprar" class="btn-comprar">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <section id="carrito" class="productos"></section>
+  <li><a href="../index.html" class="link">VOLVER</a></li>
+</main>
+    <footer>
+      <span>&copy;2026</span>
+    </footer>
+  </body>
+</html>
+
+
