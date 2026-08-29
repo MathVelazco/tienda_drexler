@@ -99,3 +99,28 @@ fetch("./data/productos.json")
   .catch((error) => {
     console.error("Error al cargar productos:", error);
   });
+
+function imprimirCarritoHTML() {
+  const contenedor = document.getElementById("carrito");
+  if (!contenedor) return;
+
+  contenedor.innerHTML = "";
+
+  carrito.forEach((producto) => {
+    // Reemplaza la ruta de la imagen para que retroceda un nivel a la carpeta /img/
+    const imagenRuta = producto.imagen ? producto.imagen.replace("./img/", "../img/") : "";
+
+    const card = document.createElement("article");
+    card.classList.add("card");
+
+    card.innerHTML = `
+      <img src="${imagenRuta}" alt="${producto.nombre}" class="card-img" />
+      <h3>${producto.nombre}</h3>
+      <p>${producto.descripcion}</p>
+      <p><strong>$${producto.precio}</strong></p>
+      <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
+    `;
+
+    contenedor.appendChild(card);
+  });
+}
