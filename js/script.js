@@ -90,7 +90,7 @@ function imprimirProductosEnHTML(array) {
 }
 
 // 5. Fetch inicial
-fetch("../data/productos.json")
+fetch("./data/productos.json")
   .then((response) => response.json())
   .then((data) => {
     imprimirProductosEnHTML(data);
