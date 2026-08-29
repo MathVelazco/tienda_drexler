@@ -18,7 +18,7 @@ function calcularYMostrarTotal() {
   }
 }
 
-// 3. Renderizar productos en pantalla
+// 3. Renderizar productos en pantalla (CON RUTA DE IMAGEN CORREGIDA)
 function imprimirCarritoEnHTML() {
   const contenedor = document.getElementById("carrito");
   if (!contenedor) return;
@@ -32,11 +32,14 @@ function imprimirCarritoEnHTML() {
   }
 
   carrito.forEach((producto, indice) => {
+    // 💡 AJUSTE DE RUTA: cambia el inicio ./img/ por ../img/ para salir de la carpeta pages/
+    const rutaImagen = producto.imagen ? producto.imagen.replace("./img/", "../img/") : "";
+
     const card = document.createElement("article");
     card.classList.add("card");
 
     card.innerHTML = `
-      <img src="${producto.imagen}" alt="${producto.nombre}" class="card-img" />
+      <img src="${rutaImagen}" alt="${producto.nombre}" class="card-img" />
       <h3>${producto.nombre}</h3>
       <p>${producto.descripcion}</p>
       <p><strong>$${producto.precio}</strong></p>
@@ -73,12 +76,11 @@ function vaciarCarrito() {
   imprimirCarritoEnHTML();
 }
 
-// 6. 🛒 SIMULADOR DE FINALIZAR COMPRA CON ESTILOS SWEETALERT2
+// 6. SIMULADOR DE FINALIZAR COMPRA CON ESTILOS SWEETALERT2
 function finalizarCompra() {
   const totalPagar = obtenerTotalCalculado();
 
   if (carrito.length === 0) {
-    // Alerta estilo Toast si el carrito está vacío
     Swal.fire({
       icon: "info",
       title: "El carrito está vacío",
@@ -91,7 +93,6 @@ function finalizarCompra() {
     return;
   }
 
-  // Ventana de confirmación
   Swal.fire({
     title: "¿Confirmar tu compra?",
     html: `<p style="font-size: 1.1em;">El total a pagar es: <strong style="color: #2e7d32;">$${totalPagar.toLocaleString("es-AR")}</strong></p>`,
@@ -104,8 +105,6 @@ function finalizarCompra() {
     reverseButtons: true
   }).then((result) => {
     if (result.isConfirmed) {
-      
-      // Simulación de procesamiento con animación
       Swal.fire({
         title: "Procesando pago",
         text: "Verificando tu transacción...",
@@ -118,7 +117,6 @@ function finalizarCompra() {
           Swal.showLoading();
         }
       }).then(() => {
-        // Ventana de éxito de la compra
         const ordenNum = Math.floor(100000 + Math.random() * 900000);
 
         Swal.fire({
@@ -132,7 +130,6 @@ function finalizarCompra() {
           confirmButtonText: "Entendido"
         });
 
-        // Limpiamos el carrito al finalizar
         vaciarCarrito();
       });
     }
@@ -143,7 +140,6 @@ function finalizarCompra() {
 document.addEventListener("DOMContentLoaded", () => {
   imprimirCarritoEnHTML();
 
-  // Botón Vaciar Carrito
   const botonVaciar = document.getElementById("btn-vaciar");
   if (botonVaciar) {
     botonVaciar.addEventListener("click", () => {
@@ -162,8 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }).then((result) => {
         if (result.isConfirmed) {
           vaciarCarrito();
-          
-          // Notificación corta de vaciado en la esquina superior
+
           Swal.mixin({
             toast: true,
             position: "top-end",
@@ -178,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Botón Finalizar Compra
   const botonComprar = document.getElementById("btn-comprar");
   if (botonComprar) {
     botonComprar.addEventListener("click", finalizarCompra);
